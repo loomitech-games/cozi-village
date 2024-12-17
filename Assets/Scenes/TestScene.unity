@@ -359,6 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518388561}
   - component: {fileID: 518388560}
+  - component: {fileID: 518388562}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -384,6 +385,7 @@ MonoBehaviour:
   horizontal: 0
   vertical: 0
   cameraController: {fileID: 1521280147}
+  animatorController: {fileID: 518388562}
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &518388561
 Transform:
@@ -401,6 +403,28 @@ Transform:
   - {fileID: 559126551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &518388562
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518388559}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 77043df6a596f124e811e3f0e71c4c2f, type: 3}
+  m_Controller: {fileID: 9100000, guid: 6788487e8e2e7f84795cb4758f94f2be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &559126551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77043df6a596f124e811e3f0e71c4c2f, type: 3}
