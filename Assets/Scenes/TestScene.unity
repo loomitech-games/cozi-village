@@ -379,10 +379,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  rotationSpeed: 500
   moveInput: {x: 0, y: 0, z: 0}
   horizontal: 0
   vertical: 0
-  camera: {fileID: 1521280147}
+  cameraController: {fileID: 1521280147}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &518388561
 Transform:
   m_ObjectHideFlags: 0

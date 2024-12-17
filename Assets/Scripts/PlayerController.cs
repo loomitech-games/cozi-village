@@ -4,16 +4,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float rotationSpeed = 500f;
     public Vector3 moveInput;
     public float horizontal = 0f;
     public float vertical = 0f;
 
-    public CameraController camera;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
-    {
-       
-    }
+    public CameraController cameraController;
+    public Quaternion targetRotation;
 
     // Update is called once per frame
     void Update()
@@ -21,10 +18,19 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
+        float isMoving = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
+
         moveInput = (new Vector3(horizontal, 0, vertical)).normalized;
 
-        var moveDir = camera.planarRotation * moveInput;
+        var moveDir = cameraController.planarRotation * moveInput;
+        
 
-        transform.Translate(moveSpeed * Time.deltaTime * moveDir); 
+        if(isMoving > 0)
+        {
+            transform.position += moveSpeed * Time.deltaTime * moveDir;
+            targetRotation = Quaternion.LookRotation(moveDir);
+        }
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 }
