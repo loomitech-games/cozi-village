@@ -8,10 +8,11 @@ public class PlayerController : MonoBehaviour
     public float horizontal = 0f;
     public float vertical = 0f;
 
+    public CameraController camera;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
         moveInput = (new Vector3(horizontal, 0, vertical)).normalized;
 
-        transform.Translate(moveSpeed * Time.deltaTime * moveInput); 
+        var moveDir = camera.planarRotation * moveInput;
+
+        transform.Translate(moveSpeed * Time.deltaTime * moveDir); 
     }
 }

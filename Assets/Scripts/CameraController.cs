@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
     public ActivateWith activateWith;
     public Transform followTarget;
     public Quaternion targetRotation;
+    public Quaternion planarRotation;
     public Vector2 framingOffset = new Vector2 (0, 1);
     public float distance = 5;
     public float minDistance = 2;
@@ -41,7 +42,9 @@ public class CameraController : MonoBehaviour
 
         active = allow;
 
-        if(allow)
+        planarRotation = Quaternion.Euler(0, rotationY, 0);
+
+        if (allow)
         {
             rotationY += Input.GetAxis("Mouse X") * rotationSpeed * (invertX ? -1 : 1);
             targetRotation = Quaternion.Euler(rotationX, rotationY, 0);
