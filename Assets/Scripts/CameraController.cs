@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     public float minDistance = 2;
     public float maxDistance = 10;
     public float zoomSpeed = 1;
-    public float minElevation = 45;
+    public float minElevation = 30;
     public float maxElevation = 90;
     public float rotationSpeed = 2f;
     public bool invertX;

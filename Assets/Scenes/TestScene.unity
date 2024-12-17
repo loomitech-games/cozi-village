@@ -602,7 +602,7 @@ MonoBehaviour:
   minDistance: 2
   maxDistance: 10
   zoomSpeed: 1
-  minElevation: 45
+  minElevation: 30
   maxElevation: 90
   rotationSpeed: 2
   invertX: 0
